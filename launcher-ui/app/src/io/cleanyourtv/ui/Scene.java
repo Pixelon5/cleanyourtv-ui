@@ -129,7 +129,6 @@ final class Scene {
         if (liquid == null) return;   // flat look: nothing reads the glass, no textures for it
         glassA = fill(glassA, from);
         if (to != null) glassB = fill(glassB, to);
-        if (liquid == null) return;
         glassShaderA = linear(glassA);
         liquid.setInputShader("imageA", glassShaderA);
         liquid.setInputShader("imageB", to != null ? linear(glassB) : glassShaderA);

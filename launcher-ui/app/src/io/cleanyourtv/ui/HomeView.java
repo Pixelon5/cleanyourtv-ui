@@ -823,6 +823,9 @@ final class HomeView extends ViewGroup implements Choreographer.FrameCallback, H
         bgFadeAt = up;
         nightPair = false;
         // The frost (drawer, toasts) on every Android; the glass only where Liquid Glass exists (Backdrop.GLASS).
+        // TODO: the dark design (no lightGlass) now takes this path too, on every Android: its frost follows the photo
+        // from the fade's start and crossfades with the drawer open, and tickBackgroundFade calls setGlassMix. Not yet
+        // checked on Android 13+.
         if (b == null || b.frost == null) return;
         if (bgFrom == null || bgFrom.frost == null) {
             scene.setFrost(frostOf(b));
